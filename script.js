@@ -28,6 +28,7 @@ $(document).ready(function () {
         submitHandler: function (form) { // for demo
             $('#myform').hide();
             $('#p1').show();
+            $('#myData').show();
             return false; // for demo
         }
         

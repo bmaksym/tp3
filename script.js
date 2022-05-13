@@ -27,16 +27,13 @@ $(document).ready(function () {
         },
         submitHandler: function (form) { // for demo
             $('#myform').hide();
-            $('#progress').show();
+            $('#p1').show();
             return false; // for demo
         }
         
     });
 });
-var tableQuestions =[
-    {"question":"À quoi sert un aria-label?", "reponse1":"Ajouter du contenu textuel sur une balise pour aider les lecteurs d'écran","reponses2":"À rien","reponse3":"Je ne sais pas","réponse":0},
-    {"question":"HTML vient de :", "reponse1":"Hyper Typo Meta Lol","reponses2":"Hypertext markup language","reponse3":"Je ne sais pas","réponse":0}
-];
+
 jQuery(document).ready(($) => {
             //Create variable to store the JSON 
             var data = `[
@@ -48,7 +45,7 @@ jQuery(document).ready(($) => {
                         "À rien", 
                         "Je ne sais pas"
                     ], 
-                    "réponse":0
+                    "réponse":1
                 },
                 { 
                     "id": 2,
@@ -58,8 +55,29 @@ jQuery(document).ready(($) => {
                         "Hypertext markup language", 
                         "Je ne sais pas"
                     ], 
+                    "réponse":2
+                },
+                { 
+                    "id": 3,
+                    "question":"Le rôle du HTML est de... :",
+                    "réponses":[
+                        "Mettre en forme du texte",
+                        "Ordonner du contenu", 
+                        "Créer des sites e-commerce"
+                    ], 
                     "réponse":1
+                },
+                { 
+                    "id": 4,
+                    "question":"Pour définir un titre DANS une page HTML, on utilise... :",
+                    "réponses":[
+                        "L'élément head",
+                        "L'élément title", 
+                        "Un élément h1, h2, ... h6"
+                    ], 
+                    "réponse":2
                 }
+                
             ]`;
             //Convert the data into JS arrays & objects
             let readyData = JSON.parse(data);
@@ -71,7 +89,7 @@ jQuery(document).ready(($) => {
             Math.random();
 
             // to gerate a randome rounded number between 1 to 10;
-            const rndInt = Math.floor(Math.random() * 2) + 1;
+            const rndInt = Math.floor(Math.random() * 4) + 1;
             console.log(rndInt);
             readyData.map((obj) => {
                 if(obj.id === rndInt){
@@ -81,7 +99,7 @@ jQuery(document).ready(($) => {
                         <input class="radio_qst" type="radio" name="fav_language"><span>${obj.réponses[0]}</span>
                         <input class="radio_qst" type="radio" name="fav_language"><span>${obj.réponses[1]}</span>
                         <input class="radio_qst" type="radio" name="fav_language"><span>${obj.réponses[2]}</span>
-                        <button class="btn btn-primary" id="${'btn'+obj.id}">Prochain</button>
+                        <button class="next" id="${'btn'+obj.id}">Next</button>
                         ${answers}
                     <div>
                 `);

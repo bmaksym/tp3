@@ -1,28 +1,3 @@
-
-
-input[type="radio"] {
-    position: relative;
-    width: 30px;
-    height: 30px;
-    border-radius: 15px;
-    margin-top: 10px;
-    margin-left: 10px;
-    border: 2px solid #1FBED6;
-    background-color: white;
-    -webkit-appearance: none; /*to disable the default appearance of radio button*/
-    -moz-appearance: none;
-  }
-
-span:first-of-type {
-    position: relative;
-    align-items: center;
-    top: 50%;
-    text-align: center;
-    font-size: 15px;
-    color: #909596;
-}
-
-
 span {
     position: relative;
     left: 5%;
@@ -42,4 +17,9 @@ input[type="submit"] {
     background-color: white;
     -webkit-appearance: none; /*to disable the default appearance of radio button*/
     -moz-appearance: none;
+}
+
+.next{
+    position: relative;
+    margin-top: 10px;
 }

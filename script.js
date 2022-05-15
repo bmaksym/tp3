@@ -28,6 +28,7 @@ $(document).ready(function () {
         submitHandler: function (form) { // for demo
             $('#myform').hide();
             $('#progress').show();
+            $('.card').show();
             return false; // for demo
         }
         
@@ -76,7 +77,7 @@ jQuery(document).ready(($) => {
             readyData.map((obj) => {
                 if(obj.id === rndInt){
                     $("#myData").append(`
-                    <div class="card" id="${'card'+obj.id}">
+                    <div class="card" id="${'card'+obj.id}" style="display: none;">
                         <h3>${obj.question}</h3>
                         <input class="radio_qst" type="radio" name="fav_language"><span>${obj.réponses[0]}</span>
                         <input class="radio_qst" type="radio" name="fav_language"><span>${obj.réponses[1]}</span>

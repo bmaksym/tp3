@@ -1,6 +1,6 @@
 
 
-input[type="radio"] {
+/* input[type="radio"] {
     position: relative;
     width: 30px;
     height: 30px;
@@ -9,37 +9,52 @@ input[type="radio"] {
     margin-left: 10px;
     border: 2px solid #1FBED6;
     background-color: white;
-    -webkit-appearance: none; /*to disable the default appearance of radio button*/
-    -moz-appearance: none;
-  }
+    display: inline-block;
+  } */
 
-span:first-of-type {
+  /* input[type="radio"] + label {
+    display: inline-block;
+  } */
+
+/* span:first-of-type {
     position: relative;
     align-items: center;
     top: 50%;
     text-align: center;
     font-size: 15px;
     color: #909596;
-}
+} */
 
 
-span {
+/* span {
     position: relative;
     left: 5%;
     color: #909596;
-}
-
+} */
+/* 
 .card{
     background: rgba(71, 67, 67, 0.8);
-}
+} */
 
-input[type="submit"] {
+/* input[type="submit"] {
     width: 100px;
     height: 30px;
     margin: 10px 0 10px 0;
     border-radius: 15px;
     border: 2px solid #1FBED6;
     background-color: white;
-    -webkit-appearance: none; /*to disable the default appearance of radio button*/
+    -webkit-appearance: none;
     -moz-appearance: none;
+} */
+
+#myData{
+    display: none;
+}
+
+#resultats, #accordion{
+    display: none;
+}
+
+#accordion div{
+    display: inline;
 }

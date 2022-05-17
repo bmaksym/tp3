@@ -191,6 +191,9 @@ $(document).ready(function () {
 
                     $(function() {
                         $('#eventCreated').modal('show').fadeIn(fadingTemps);
+                        $(".btn").click(function(){
+                            $("#eventCreated").modal('hide');
+                        });
                         // myModalTimeout = setTimeout(function() {
                         //     $('#eventCreated').modal('hide');
                         // }, 3000)
@@ -203,6 +206,9 @@ $(document).ready(function () {
 
                     $(function() {
                         $('#eventCreated').modal('show').fadeIn(fadingTemps);
+                        $(".btn").click(function(){
+                            $("#eventCreated").modal('hide');
+                        });
                         // myModalTimeout = setTimeout(function() {
                         //     $('#eventCreated').modal('hide');
                         // }, 3000)
@@ -215,6 +221,9 @@ $(document).ready(function () {
 
                     $(function() {
                         $('#eventCreated').modal('show').fadeIn(fadingTemps);
+                        $(".btn").click(function(){
+                            $("#eventCreated").modal('hide');
+                        });
                         // myModalTimeout = setTimeout(function() {
                         //     $('#eventCreated').modal('hide');
                         // }, 3000)

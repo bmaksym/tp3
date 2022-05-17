@@ -7,7 +7,7 @@
   <meta name="description" content="">
   <meta name="author" content="Mark Otto, Jacob Thornton, and Bootstrap contributors">
   <meta name="generator" content="Hugo 0.88.1">
-  <title>Album example · Bootstrap v5.1</title>
+  <title>Quiz HTML</title>
   <link rel="stylesheet" href="style.css">
   <link rel="canonical" href="https://getbootstrap.com/docs/5.1/examples/album/">
   <script src="https://code.jquery.com/jquery-3.2.1.slim.min.js" integrity="sha384-KJ3o2DKtIkvYIK3UENzmM7KCkRr/rE9/Qpg6aAZGJwFDMVNA/GpGFF93hXpG5KkN" crossorigin="anonymous"></script>
@@ -38,6 +38,7 @@
 
 </head>
 <body class="bg-light">
+  
   <div class="progress">
     <div id="progress" class="progress-bar progress-bar-striped progress-bar-animated" role="progressbar" aria-valuenow="0" aria-valuemin="0" aria-valuemax="100"></div>
   </div>
@@ -64,7 +65,7 @@
             <option value="2">professeur</option>
           </select>
         </div>
-        <button class="btn btn-primary mb-3" type="submit">envoyer</button>
+        <button class="btn btn-primary mb-3" type="submit">Envoyer</button>
       </form>
 
 
@@ -77,12 +78,23 @@
             <label id="label1" class="form-check-label" for="test1"></label>
             <input class="form-check-input" type="radio" name="fav_language" id="test2" value="2">
             <label id="label2" class="form-check-label" for="test2"></label>
-            <button type="button" class="btn btn-primary" id="btn">Prochain</button>
+            
         </div>
+        <button type="button" class="btn btn-primary" id="btn">Prochain</button>
       </div>
       <div id="resultats">
+
         <div id="alert" class="alert" role="alert">
-          A simple success alert—check it out!
+          <div class="modal" id="eventCreated">
+            <div class="modal-dialog">
+              <div class="modal-content">
+              <div class="modal-body">
+                Votre résultat!
+              </div>
+                
+              </div>
+            </div>
+          </div>
         </div>
         <div class="resultatsInfos">
           <p>Nom: <span id="resultatsNom"></span></p>

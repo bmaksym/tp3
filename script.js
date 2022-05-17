@@ -4,31 +4,40 @@ const fadingTemps=250;
 
 var data = `[
     { 
-        "question":"À quoi sert un aria-label?",
+        "question":"Le rôle du HTML est de...",
         "réponses":[
-            "Ajouter du contenu textuel sur une balise pour aider les lecteurs d'écran",
-            "À rien", 
-            "Je ne sais pas"
-        ], 
-        "réponse":0
-    },
-    { 
-        "question":"HTML vient de :",
-        "réponses":[
-            "Hyper Typo Meta Lol",
-            "Hypertext markup language", 
-            "Je ne sais pas"
+            "Mettre en forme du texte",
+            "Ordonner du contenu", 
+            "Créer des sites e-commerce"
         ], 
         "réponse":1
     },
     { 
-        "question":"Qui est le meilleur falcon du Québec",
+        "question":"Pour définir un titre DANS une page HTML, on utilise...",
         "réponses":[
-            "Alex",
-            "Hubert", 
-            "Tony"
+            "L'élément title",
+            "L'élément head", 
+            "Un élément h1, h2, ... h6"
         ], 
         "réponse":2
+    },
+    { 
+        "question":"Pour indiquer qu'un contenu est très important, on utilise l'élément...",
+        "réponses":[
+            "Mark",
+            "Em", 
+            "Strong"
+        ], 
+        "réponse":2
+    },
+    { 
+        "question":"A quoi sert l'attribut alt de l'élément img ?",
+        "réponses":[
+            "A donner un lien alternatif vers l'image si le premier est cassé",
+            "A donner une description de l'image si celle-ci ne peut pas s'afficher", 
+            "A afficher une deuxième image si la première ne peut pas s'afficher"
+        ], 
+        "réponse":1
     }
 ]`;
 
@@ -169,14 +178,17 @@ $(document).ready(function () {
                 // créer l'alerte
                 let ratio=questionsCorrectes/questionsTotal;
                 if(ratio>0.7){
-                    $("#alert").addClass("alert-success");
-                    $("#alert").html("Bravo vous êtes un champion du code !");
+                    $(function() {
+                        $('#eventCreated').modal('show').addClass("alert-success");
+                      });
                 }else if(ratio>=0.6){
-                    $("#alert").addClass("alert-warning");
-                    $("#alert").html("Vous êtes un peu moyen !");
+                    $(function() {
+                        $('#eventCreated').modal('show').addClass("alert-warning");
+                      });
                 }else{
-                    $("#alert").addClass("alert-danger");
-                    $("#alert").html("Vous êtes un peu nul !");
+                    $(function() {
+                        $('#eventCreated').modal('show').addClass("alert-danger");
+                      });
                 }
 
                 // create accordion for questions

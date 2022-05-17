@@ -39,6 +39,16 @@ var data = `[
         ], 
         "réponse":1
     }
+    ,
+    { 
+        "question":"Qu'est ce qu'un navigateur web ?",
+        "réponses":[
+            "Un réseau social global",
+            "Un outil permettant d'accéder à Internet", 
+            "Un logiciel capable d'interpréter et d'afficher du code HTML"
+        ], 
+        "réponse":2
+    }
 ]`;
 
 $(document).ready(function () {
@@ -180,15 +190,27 @@ $(document).ready(function () {
                 if(ratio>0.7){
                     $(function() {
                         $('#eventCreated').modal('show').addClass("alert-success");
+                        myModalTimeout = setTimeout(function() {
+                            $('#eventCreated').modal('hide');
+                        }, 3000)
                       });
+                    
                 }else if(ratio>=0.6){
                     $(function() {
                         $('#eventCreated').modal('show').addClass("alert-warning");
+                        myModalTimeout = setTimeout(function() {
+                            $('#eventCreated').modal('hide');
+                        }, 3000)
                       });
+                      
                 }else{
                     $(function() {
                         $('#eventCreated').modal('show').addClass("alert-danger");
+                        myModalTimeout = setTimeout(function() {
+                            $('#eventCreated').modal('hide');
+                        }, 3000)
                       });
+                    
                 }
 
                 // create accordion for questions

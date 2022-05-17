@@ -188,29 +188,40 @@ $(document).ready(function () {
                 // créer l'alerte
                 let ratio=questionsCorrectes/questionsTotal;
                 if(ratio>0.7){
+
                     $(function() {
-                        $('#eventCreated').modal('show').addClass("alert-success");
-                        myModalTimeout = setTimeout(function() {
-                            $('#eventCreated').modal('hide');
-                        }, 3000)
+                        $('#eventCreated').modal('show').fadeIn(fadingTemps);
+                        // myModalTimeout = setTimeout(function() {
+                        //     $('#eventCreated').modal('hide');
+                        // }, 3000)
                       });
+                    $(function() {
+                        $("#alert").addClass("alert-success").text("Vous avez passé comme un pro !").fadeIn(fadingTemps);
+                    });
                     
                 }else if(ratio>=0.6){
+
                     $(function() {
-                        $('#eventCreated').modal('show').addClass("alert-warning");
-                        myModalTimeout = setTimeout(function() {
-                            $('#eventCreated').modal('hide');
-                        }, 3000)
-                      });
-                      
+                        $('#eventCreated').modal('show').fadeIn(fadingTemps);
+                        // myModalTimeout = setTimeout(function() {
+                        //     $('#eventCreated').modal('hide');
+                        // }, 3000)
+                    });
+                    $(function() {
+                        $("#alert").addClass("alert-warning").text("Vous avez passé de peu !").fadeIn(fadingTemps);
+                    });
+
                 }else{
+
                     $(function() {
-                        $('#eventCreated').modal('show').addClass("alert-danger");
-                        myModalTimeout = setTimeout(function() {
-                            $('#eventCreated').modal('hide');
-                        }, 3000)
+                        $('#eventCreated').modal('show').fadeIn(fadingTemps);
+                        // myModalTimeout = setTimeout(function() {
+                        //     $('#eventCreated').modal('hide');
+                        // }, 3000)
                       });
-                    
+                    $(function() {
+                        $("#alert").addClass("alert-danger").text("Vous avez échouer !").fadeIn(fadingTemps);
+                    });
                 }
 
                 // create accordion for questions

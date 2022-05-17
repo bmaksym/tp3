@@ -1,6 +1,5 @@
 <!doctype html>
-<html lang="en">
-
+<html lang="fr">
 <head>
   <meta charset="utf-8">
   <meta name="viewport" content="width=device-width, initial-scale=1">
@@ -12,12 +11,17 @@
   <!-- notre stylesheet -->
   <link rel="stylesheet" href="style.css">
   <!-- bootstrap -->
-  <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.1.3/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-1BmE4kWBq78iYhFldvKuhfTAU6auU8tT94WrHftjDbrCEXSU1oBoqyl2QvZ6jIW3" crossorigin="anonymous">
-  <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.1.3/dist/js/bootstrap.min.js" integrity="sha384-QJHtvGhmr9XOIpI6YVutG+2QOK9T+ZnN4kzFN1RtK3zEFEIsxhlmWl5/YESvpZ13" crossorigin="anonymous"></script>
+  <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.1.3/dist/css/bootstrap.min.css" rel="stylesheet"
+    integrity="sha384-1BmE4kWBq78iYhFldvKuhfTAU6auU8tT94WrHftjDbrCEXSU1oBoqyl2QvZ6jIW3" crossorigin="anonymous">
+  <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.1.3/dist/js/bootstrap.min.js"
+    integrity="sha384-QJHtvGhmr9XOIpI6YVutG+2QOK9T+ZnN4kzFN1RtK3zEFEIsxhlmWl5/YESvpZ13"
+    crossorigin="anonymous"></script>
   <!-- jquery -->
-  <script src="https://code.jquery.com/jquery-3.6.0.js" integrity="sha256-H+K7U5CnXl1h5ywQfKtSj8PCmoN9aaq30gDh27Xc0jk=" crossorigin="anonymous"></script>
+  <script src="https://code.jquery.com/jquery-3.6.0.js" integrity="sha256-H+K7U5CnXl1h5ywQfKtSj8PCmoN9aaq30gDh27Xc0jk="
+    crossorigin="anonymous"></script>
   <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery-validate/1.19.0/jquery.validate.min.js"></script>
-  <script type="text/javascript" charset="utf8" src="https://cdn.datatables.net/1.12.0/js/jquery.dataTables.js"></script>
+  <script type="text/javascript" charset="utf8"
+    src="https://cdn.datatables.net/1.12.0/js/jquery.dataTables.js"></script>
   <script src="https://code.jquery.com/ui/1.13.1/jquery-ui.js"></script>
   <!-- table a la fin css -->
   <link rel="stylesheet" type="text/css" href="https://cdn.datatables.net/1.12.0/css/jquery.dataTables.css">
@@ -27,10 +31,11 @@
   <script src="script.js"></script>
 
 </head>
+
 <body class="bg-light">
-  
   <div class="progress">
-    <div id="progress" class="progress-bar progress-bar-striped progress-bar-animated" role="progressbar" aria-valuenow="0" aria-valuemin="0" aria-valuemax="100"></div>
+    <div id="progress" class="progress-bar progress-bar-striped progress-bar-animated" role="progressbar"
+      aria-valuenow="0" aria-valuemin="0" aria-valuemax="100"></div>
   </div>
   <main class="container text-center d-flex flex-column align-items-center">
     <div class="py-5 col-12 col-lg-6">
@@ -57,38 +62,30 @@
         </div>
         <button class="btn btn-primary mb-3" type="submit">Envoyer</button>
       </form>
-
-
       <div id="myData">
-          <div class="card form-check" id="card">
-            <h3 id="titre"></h3>
-            <input class="form-check-input" type="radio" name="fav_language" id="test0" value="0">
-            <label id="label0" class="form-check-label" for="test0"></label>
-            <input class="form-check-input" type="radio" name="fav_language" id="test1" value="1">
-            <label id="label1" class="form-check-label" for="test1"></label>
-            <input class="form-check-input" type="radio" name="fav_language" id="test2" value="2">
-            <label id="label2" class="form-check-label" for="test2"></label>
-            
+        <div class="card form-check" id="card">
+          <h3 id="titre"></h3>
+          <input class="form-check-input" type="radio" name="fav_language" id="test0" value="0">
+          <label id="label0" class="form-check-label" for="test0"></label>
+          <input class="form-check-input" type="radio" name="fav_language" id="test1" value="1">
+          <label id="label1" class="form-check-label" for="test1"></label>
+          <input class="form-check-input" type="radio" name="fav_language" id="test2" value="2">
+          <label id="label2" class="form-check-label" for="test2"></label>
         </div>
         <button type="button" class="btn btn-primary" id="btn">Prochain</button>
       </div>
       <div id="resultats">
-
         <div class="modal" id="eventCreated">
           <div class="modal-dialog">
             <div class="modal-content">
-            
-              <!-- Modal Header -->
               <div class="modal-header">
-               <h4 class="modal-title" id="myModalLabel">Résultat</h4>
-            </div>
-            <div class="modal-body">
-              This is test 
-            </div>
-            <div class="modal-footer">
-            <button type="button" class="btn btn-danger" data-dismiss="modal">Close</button>
+                <h4 class="modal-title" id="myModalLabel">Résultat</h4>
               </div>
-              
+              <div id="textResult" class="modal-body">
+              </div>
+              <div class="modal-footer">
+                <button type="button" class="btn btn-danger" data-dismiss="modal">Close</button>
+              </div>
             </div>
           </div>
         </div>
@@ -100,26 +97,23 @@
           <p>Date: <span id="resultatsDate"></span></p>
           <p>Occupation: <span id="resultatsOccupation"></span></p>
         </div>
-        <br>
+        <br><br><br>
         <table id="myTable" class="display">
-            <thead>
-                <tr>
-                    <th>#</th>
-                    <th>Question</th>
-                    <th>Status</th>
-                </tr>
-            </thead>
-            <tbody id="myTableBody">
-            </tbody>
+          <thead>
+            <tr>
+              <th>#</th>
+              <th>Question</th>
+              <th>Status</th>
+            </tr>
+          </thead>
+          <tbody id="myTableBody">
+          </tbody>
         </table>
-        <br>
-        <br>
-        <br>
+        <br><br><br>
         <div class="accordion" id="accordion">
         </div>
+        <br><br><br>
       </div>
-
-
     </div>
   </main>
 </body>

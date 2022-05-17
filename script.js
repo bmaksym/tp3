@@ -38,8 +38,7 @@ var data = `[
             "A afficher une deuxième image si la première ne peut pas s'afficher"
         ], 
         "réponse":1
-    }
-    ,
+    },
     { 
         "question":"Qu'est ce qu'un navigateur web ?",
         "réponses":[
@@ -92,7 +91,6 @@ $(document).ready(function () {
             $("#resultatsDate").html($("#date").val())
             $("#resultatsOccupation").html($("#occupation").val())
 
-
             $('#myform').fadeOut(fadingTemps,function(){
                 $('#progress').fadeIn(fadingTemps);
                 $('#myData').fadeIn(fadingTemps);
@@ -136,17 +134,17 @@ $(document).ready(function () {
 
     // cliquer sur le bouton pour passer à la question suivante
     $("#btn").click(function(){
-        if($('input[name="fav_language"]:checked').length>0 && btnActive){
+        if ($('input[name="fav_language"]:checked').length>0 && btnActive){
             // récupérer la réponse de la question actuelle
             let reponse = parseInt($('input[name="fav_language"]:checked').val());
 
-            if(obj.réponse == reponse){
+            if (obj.réponse == reponse){
                 reponses.push({
                     reponse:obj.réponses[reponse],
                     status: true,
                 });
                 questionsCorrectes++;
-            }else{
+            } else {
                 reponses.push({
                     reponse: obj.réponses[reponse],
                     status: false,
@@ -171,7 +169,7 @@ $(document).ready(function () {
 
             btnActive=false;
 
-            if(question < readyData.length-1){
+            if (question < readyData.length-1){
                 question++;
                 obj=readyData[question];
                 
@@ -182,51 +180,45 @@ $(document).ready(function () {
                     });
                 });
                 
-            }else{
+            } else {
                 question++;
                 
                 // créer l'alerte
                 let ratio=questionsCorrectes/questionsTotal;
-                if(ratio>0.7){
+                if (ratio>0.7){
 
                     $(function() {
                         $('#eventCreated').modal('show').fadeIn(fadingTemps);
+                        $("#textResult").text("Succès !").show();
                         $(".btn").click(function(){
                             $("#eventCreated").modal('hide');
                         });
-                        // myModalTimeout = setTimeout(function() {
-                        //     $('#eventCreated').modal('hide');
-                        // }, 3000)
                       });
                     $(function() {
                         $("#alert").addClass("alert-success").text("Vous avez passé comme un pro !").fadeIn(fadingTemps);
                     });
                     
-                }else if(ratio>=0.6){
+                } else if (ratio>=0.6){
 
                     $(function() {
                         $('#eventCreated').modal('show').fadeIn(fadingTemps);
+                        $("#textResult").text("Succès !").show();
                         $(".btn").click(function(){
                             $("#eventCreated").modal('hide');
                         });
-                        // myModalTimeout = setTimeout(function() {
-                        //     $('#eventCreated').modal('hide');
-                        // }, 3000)
                     });
                     $(function() {
                         $("#alert").addClass("alert-warning").text("Vous avez passé de peu !").fadeIn(fadingTemps);
                     });
 
-                }else{
+                } else {
 
                     $(function() {
                         $('#eventCreated').modal('show').fadeIn(fadingTemps);
+                        $("#textResult").text("Échec !").show();
                         $(".btn").click(function(){
                             $("#eventCreated").modal('hide');
                         });
-                        // myModalTimeout = setTimeout(function() {
-                        //     $('#eventCreated').modal('hide');
-                        // }, 3000)
                       });
                     $(function() {
                         $("#alert").addClass("alert-danger").text("Vous avez échouer !").fadeIn(fadingTemps);
@@ -240,7 +232,6 @@ $(document).ready(function () {
                     active:false,
                 });
                 
-
                 $('#myData').fadeOut(fadingTemps,function(){
                     $("#progress").delay(fadingTemps).fadeOut(fadingTemps,function(){
                         $("#resultats").fadeIn(fadingTemps);
@@ -256,9 +247,7 @@ $(document).ready(function () {
             $('#progress').css("width", progress+"%");
         }
     });
-
 });
-
 
 function afficherQuestion(obj){
     $('input[name="fav_language"]:checked').prop("checked", false);
